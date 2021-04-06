@@ -3,12 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>J2Team Community Offline</title>
+    <title>JetCare - Lucky Wheel</title>
     <link rel="stylesheet" href="css/typo/typo.css" />
     <link rel="stylesheet" href="css/hc-canvas-luckwheel.css" />
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
     <style>
-      .hc-luckywheel{
-        position:fixed;
+      .hc-luckywheel {
+        /* position: fixed; */
         top: 50%;
         left: 50%;
         margin-top: -250px;
@@ -16,110 +18,202 @@
       }
     </style>
   </head>
-  <body class="bg">
-    <div class="wrapper typo" id="wrapper">
-      <section id="luckywheel" class="hc-luckywheel">
-        <div class="hc-luckywheel-container">
-          <canvas class="hc-luckywheel-canvas" width="500px" height="500px"
-            >Vòng Xoay May Mắn</canvas
+  <body>
+    <header
+      class="sticky top-0 left-0 right-0 z-30 bg-light-elevatedSurface dark:bg-dark-elevatedSurface h-16 lg:h-18 transition-colors duration-300 ease-linear shadow bg-white"
+    >
+      <div class="container relative mx-auto px-4 flex items-center lg:py-6 h-full">
+        <a href="/" class="inline-block text-nuxt-gray h-7 lg:h-10 z-10 mr-auto nuxt-link-active">
+          <h1 class="m-0 h-0 w-0 overflow-hidden">JetCare</h1>
+          <img src="images/logo-without-txt.png" class="w-8" />
+        </a>
+        <nav class="hidden lg:flex lg:pt-1 xl:pt-0 mx-auto" data-v-72292c93="">
+          <ul class="flex text-center" data-v-72292c93="">
+            <li class="xl:px-4 lg:py-0 lg:px-2 py-2" data-v-72292c93="">
+              <a
+                href="/docs/2.x/get-started/installation"
+                class="block font-medium uppercase hover:no-underline light:hover:text-nuxt-lightgreen dark:hover:text-nuxt-lightgreen text-light-onSurfacePrimary dark:text-dark-onSurfacePrimary transition-colors duration-300 ease-linear"
+                data-v-72292c93=""
+              >
+                Giới thiệu
+              </a>
+            </li>
+            <li class="xl:px-4 lg:py-0 lg:px-2 py-2" data-v-72292c93="">
+              <a
+                href="/examples"
+                class="block font-medium uppercase hover:no-underline light:hover:text-nuxt-lightgreen dark:hover:text-nuxt-lightgreen text-light-onSurfacePrimary dark:text-dark-onSurfacePrimary transition-colors duration-300 ease-linear"
+                data-v-72292c93=""
+              >
+                Sản phẩm
+              </a>
+            </li>
+            <li class="xl:px-4 lg:py-0 lg:px-2 py-2" data-v-72292c93="">
+              <a
+                href="/resources"
+                class="block font-medium uppercase hover:no-underline light:hover:text-nuxt-lightgreen dark:hover:text-nuxt-lightgreen text-light-onSurfacePrimary dark:text-dark-onSurfacePrimary transition-colors duration-300 ease-linear"
+                data-v-72292c93=""
+              >
+                Hợp tác
+              </a>
+            </li>
+            <li class="xl:px-4 lg:py-0 lg:px-2 py-2" data-v-72292c93="">
+              <a
+                href="/blog"
+                class="block font-medium uppercase hover:no-underline light:hover:text-nuxt-lightgreen dark:hover:text-nuxt-lightgreen text-light-onSurfacePrimary dark:text-dark-onSurfacePrimary transition-colors duration-300 ease-linear"
+                data-v-72292c93=""
+              >
+                Blog
+              </a>
+            </li>
+            <li class="xl:px-4 lg:py-0 lg:px-2 py-2" data-v-72292c93="">
+              <a
+                href="https://masteringnuxt.com/?utm_source=nuxt&amp;utm_medium=link&amp;utm_campaign=navbar_link"
+                target="_blank"
+                rel="noopener"
+                class="block font-medium uppercase hover:no-underline hover:text-nuxt-lightgreen text-light-onSurfacePrimary dark:text-dark-onSurfacePrimary transition-colors duration-300 ease-linear"
+                data-v-72292c93=""
+              >
+                Liên hệ
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div data-v-72292c93="">
+          <div
+            class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in"
+            data-v-72292c93=""
           >
+            <input
+              type="checkbox"
+              name="dark-mode"
+              id="dark-mode"
+              class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"
+              data-v-72292c93=""
+            /><label
+              for="dark-mode"
+              class="toggle-label block overflow-hidden h-6 rounded-full cursor-pointer"
+              data-v-72292c93=""
+            ></label>
+          </div>
+          <label for="dark-mode" class="text-xs text-gray-700 dark:text-gray-500" data-v-72292c93="">Dark Mode</label>
         </div>
-        <a class="hc-luckywheel-btn" href="javascript:;">Xoay</a>
-      </section>
+      </div>
+    </header>
+    <div class="wrapper typo bg flex" id="wrapper">
+      <div class="flex-1 items-end">
+        <section id="luckywheel" class="hc-luckywheel">
+          <div class="hc-luckywheel-container">
+            <canvas class="hc-luckywheel-canvas" width="500px" height="500px">Vòng Xoay May Mắn</canvas>
+          </div>
+          <a class="hc-luckywheel-btn" href="javascript:;">Xoay</a>
+        </section>
+      </div>
+
+      <div class="flex-1 flex flex-col justify-center items-start">
+        <a
+          href="javascript;"
+          data-cy="get-started"
+          class="no-underline inline-block font-medium text-sm px-14 py-2 shadow uppercase rounded hover:shadow-md sm:mr-4 py-3 px-6 text-base mb-12 primary bg-yellow-600 text-white text-xl text-center rounded-3xl"
+        >
+          MUA BẢO <br />
+          HIỂM TNDS
+        </a>
+        <a
+          href="javascript;"
+          data-cy="get-started"
+          class="no-underline inline-block font-medium text-sm px-14 py-2 shadow uppercase rounded hover:shadow-md sm:mr-4 py-3 px-6 text-base mb-4 primary bg-yellow-600 text-white text-xl text-center rounded-3xl"
+        >
+          CHECK-IN <br />
+          FACEBOOK
+        </a>
+      </div>
     </div>
-</style>
+    <footer
+      class="lg:border-t border-light-border dark:border-dark-border transition-colors duration-300 ease-linear bg-white"
+    >
+      <div class="container mx-auto px-4 flex flex-row items-center content-center justify-center py-4">
+        <p>Copyright &copy;2021 by JetCare</p>
+      </div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="js/hc-canvas-luckwheel.js"></script>
     <script>
       var isPercentage = true;
       var prizes = [
-              {
-                text: "Áo thun J2Team",
-                img: "images/Ao.png",
-                number: 1, // 1%,
-                percentpage: 0.01 // 1%
-              },
-              {
-                text: "Nón J2 Team",
-                img: "images/Non.png",
-                number: 1,
-                percentpage: 0.05 // 5%
-              },
-              {
-                text: "Vòng Tay J2Team",
-                img: "images/Vong.png",
-                number : 1,
-                percentpage: 0.1 // 10%
-              },
-              {
-                text: "J2Team Security",
-                img: "images/j2_logo.png",
-                number: 1,
-                percentpage: 0.24 // 24%
-              },
-              {
-                text: "Chúc bạn may mắn lần sau",
-                img: "images/miss.png",
-                percentpage: 0.6 // 60%
-              },
-            ];
+        {
+          text: 'Áo thun J2Team',
+          img: 'images/Ao.png',
+          number: 1, // 1%,
+          percentpage: 0.01, // 1%
+        },
+        {
+          text: 'Nón J2 Team',
+          img: 'images/Non.png',
+          number: 1,
+          percentpage: 0.05, // 5%
+        },
+        {
+          text: 'Vòng Tay J2Team',
+          img: 'images/Vong.png',
+          number: 1,
+          percentpage: 0.1, // 10%
+        },
+        {
+          text: 'J2Team Security',
+          img: 'images/j2_logo.png',
+          number: 1,
+          percentpage: 0.24, // 24%
+        },
+        {
+          text: 'Chúc bạn may mắn lần sau',
+          img: 'images/miss.png',
+          percentpage: 0.6, // 60%
+        },
+      ];
       document.addEventListener(
-        "DOMContentLoaded",
-        function() {
+        'DOMContentLoaded',
+        function () {
           hcLuckywheel.init({
-            id: "luckywheel",
-            config: function(callback) {
-              callback &&
-                callback(prizes);
+            id: 'luckywheel',
+            config: function (callback) {
+              callback && callback(prizes);
             },
-            mode : "both",
-            getPrize: function(callback) {
+            mode: 'both',
+            getPrize: function (callback) {
               var rand = randomIndex(prizes);
               var chances = rand;
               callback && callback([rand, chances]);
             },
-            gotBack: function(data) {
-              if(data == null){
-                Swal.fire(
-                  'Chương trình kết thúc',
-                  'Đã hết phần thưởng',
-                  'error'
-                )
-              } else if (data == 'Chúc bạn may mắn lần sau'){
-                Swal.fire(
-                  'Bạn không trúng thưởng',
-                  data,
-                  'error'
-                )
-              } else{
-                Swal.fire(
-                  'Đã trúng giải',
-                  data,
-                  'success'
-                )
+            gotBack: function (data) {
+              if (data == null) {
+                Swal.fire('Chương trình kết thúc', 'Đã hết phần thưởng', 'error');
+              } else if (data == 'Chúc bạn may mắn lần sau') {
+                Swal.fire('Bạn không trúng thưởng', data, 'error');
+              } else {
+                Swal.fire('Đã trúng giải', data, 'success');
               }
-            }
+            },
           });
         },
-        false
+        false,
       );
-      function randomIndex(prizes){
-        if(isPercentage){
+      function randomIndex(prizes) {
+        if (isPercentage) {
           var counter = 1;
           for (let i = 0; i < prizes.length; i++) {
-            if(prizes[i].number == 0){
-              counter++
+            if (prizes[i].number == 0) {
+              counter++;
             }
           }
-          if(counter == prizes.length){
-            return null
+          if (counter == prizes.length) {
+            return null;
           }
           let rand = Math.random();
           let prizeIndex = null;
           console.log(rand);
           switch (true) {
             case rand < prizes[4].percentpage:
-              prizeIndex = 4 ;
+              prizeIndex = 4;
               break;
             case rand < prizes[4].percentpage + prizes[3].percentpage:
               prizeIndex = 3;
@@ -129,33 +223,38 @@
               break;
             case rand < prizes[4].percentpage + prizes[3].percentpage + prizes[2].percentpage + prizes[1].percentpage:
               prizeIndex = 1;
-              break;  
-            case rand < prizes[4].percentpage + prizes[3].percentpage + prizes[2].percentpage + prizes[1].percentpage  + prizes[0].percentpage:
+              break;
+            case rand <
+              prizes[4].percentpage +
+                prizes[3].percentpage +
+                prizes[2].percentpage +
+                prizes[1].percentpage +
+                prizes[0].percentpage:
               prizeIndex = 0;
-              break;  
+              break;
           }
-          if(prizes[prizeIndex].number != 0){
-            prizes[prizeIndex].number = prizes[prizeIndex].number - 1
-            return prizeIndex
-          }else{
-            return randomIndex(prizes)
+          if (prizes[prizeIndex].number != 0) {
+            prizes[prizeIndex].number = prizes[prizeIndex].number - 1;
+            return prizeIndex;
+          } else {
+            return randomIndex(prizes);
           }
-        }else{
+        } else {
           var counter = 0;
           for (let i = 0; i < prizes.length; i++) {
-            if(prizes[i].number == 0){
-              counter++
+            if (prizes[i].number == 0) {
+              counter++;
             }
           }
-          if(counter == prizes.length){
-            return null
+          if (counter == prizes.length) {
+            return null;
           }
-          var rand = (Math.random() * (prizes.length)) >>> 0;
-          if(prizes[rand].number != 0){
-            prizes[rand].number = prizes[rand].number - 1
-            return rand
-          }else{
-            return randomIndex(prizes)
+          var rand = (Math.random() * prizes.length) >>> 0;
+          if (prizes[rand].number != 0) {
+            prizes[rand].number = prizes[rand].number - 1;
+            return rand;
+          } else {
+            return randomIndex(prizes);
           }
         }
       }
